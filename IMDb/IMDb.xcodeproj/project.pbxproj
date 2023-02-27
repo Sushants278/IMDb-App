@@ -8,12 +8,13 @@
 
 /* Begin PBXBuildFile section */
 		85484DAB29ACF4BF0066932A /* IMDbApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DAA29ACF4BF0066932A /* IMDbApp.swift */; };
-		85484DAD29ACF4BF0066932A /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DAC29ACF4BF0066932A /* ContentView.swift */; };
+		85484DAD29ACF4BF0066932A /* MovieListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DAC29ACF4BF0066932A /* MovieListView.swift */; };
 		85484DAF29ACF4C10066932A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85484DAE29ACF4C10066932A /* Assets.xcassets */; };
 		85484DB229ACF4C10066932A /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 85484DB129ACF4C10066932A /* Preview Assets.xcassets */; };
 		85484DBC29ACF4C10066932A /* IMDbTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DBB29ACF4C10066932A /* IMDbTests.swift */; };
 		85484DC629ACF4C10066932A /* IMDbUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DC529ACF4C10066932A /* IMDbUITests.swift */; };
 		85484DC829ACF4C10066932A /* IMDbUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DC729ACF4C10066932A /* IMDbUITestsLaunchTests.swift */; };
+		85484DDF29ACFB580066932A /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DDE29ACFB580066932A /* NetworkManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,7 +37,7 @@
 /* Begin PBXFileReference section */
 		85484DA729ACF4BF0066932A /* IMDb.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = IMDb.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		85484DAA29ACF4BF0066932A /* IMDbApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbApp.swift; sourceTree = "<group>"; };
-		85484DAC29ACF4BF0066932A /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		85484DAC29ACF4BF0066932A /* MovieListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieListView.swift; sourceTree = "<group>"; };
 		85484DAE29ACF4C10066932A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		85484DB129ACF4C10066932A /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		85484DB729ACF4C10066932A /* IMDbTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMDbTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -44,6 +45,7 @@
 		85484DC129ACF4C10066932A /* IMDbUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = IMDbUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		85484DC529ACF4C10066932A /* IMDbUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbUITests.swift; sourceTree = "<group>"; };
 		85484DC729ACF4C10066932A /* IMDbUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		85484DDE29ACFB580066932A /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,7 +133,7 @@
 		85484DD429ACF5B30066932A /* View */ = {
 			isa = PBXGroup;
 			children = (
-				85484DAC29ACF4BF0066932A /* ContentView.swift */,
+				85484DAC29ACF4BF0066932A /* MovieListView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -153,8 +155,8 @@
 		85484DD729ACF61D0066932A /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				85484DDA29ACF6470066932A /* Details */,
 				85484DD929ACF6330066932A /* List */,
+				85484DDA29ACF6470066932A /* Details */,
 			);
 			path = Interface;
 			sourceTree = "<group>";
@@ -162,6 +164,7 @@
 		85484DD829ACF6260066932A /* Infrastructure */ = {
 			isa = PBXGroup;
 			children = (
+				85484DDE29ACFB580066932A /* NetworkManager.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -337,7 +340,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				85484DAD29ACF4BF0066932A /* ContentView.swift in Sources */,
+				85484DDF29ACFB580066932A /* NetworkManager.swift in Sources */,
+				85484DAD29ACF4BF0066932A /* MovieListView.swift in Sources */,
 				85484DAB29ACF4BF0066932A /* IMDbApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
