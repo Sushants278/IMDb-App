@@ -20,8 +20,8 @@ extension NetworkManager {
     
     /// Gets the array of IMDb associated with Ednpoint
     /// - Parameters:
-    ///   - offset: pagination index
-    ///   - loadMore: isPagination
+    ///   - pageNumber: pagination index
+    ///   - searchQuery: search Text
     ///   - handler: Callback after execution the request
     func fetchIMDbList(pageNumber: Int, searchQuery: String, handler: @escaping IMDbListCompletionClosure) {
         
@@ -34,7 +34,6 @@ extension NetworkManager {
             URLQueryItem(name: "page", value:  String(pageNumber))
         ]
         
-     
         
         guard let url = components.url else {
             

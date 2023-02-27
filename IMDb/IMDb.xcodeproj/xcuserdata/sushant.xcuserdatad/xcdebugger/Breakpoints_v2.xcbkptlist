@@ -30,8 +30,8 @@
             filePath = "IMDb/Infrastructure/NetworkManager + SearchIMDb.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "39"
-            endingLineNumber = "39"
+            startingLineNumber = "38"
+            endingLineNumber = "38"
             landmarkName = "fetchIMDbList(pageNumber:searchQuery:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -46,8 +46,8 @@
             filePath = "IMDb/Infrastructure/NetworkManager + SearchIMDb.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "45"
-            endingLineNumber = "45"
+            startingLineNumber = "44"
+            endingLineNumber = "44"
             landmarkName = "fetchIMDbList(pageNumber:searchQuery:handler:)"
             landmarkType = "7">
          </BreakpointContent>
@@ -130,54 +130,6 @@
             endingLineNumber = "34"
             landmarkName = "fetchIMDbList(pageNumber:searchQuery:handler:)"
             landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            uuid = "7707C8B9-11B4-4F79-B4B1-B56DEEC37A6E"
-            shouldBeEnabled = "No"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "IMDb/Interface/List/View/MovieListView.swift"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "21"
-            endingLineNumber = "21"
-            landmarkName = "body"
-            landmarkType = "24">
-            <Locations>
-               <Location
-                  uuid = "7707C8B9-11B4-4F79-B4B1-B56DEEC37A6E - d96729c2610d4ace"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: IMDb.Search)&gt;, Swift.String, &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in IMDb.MoViewListView.body.getter : some"
-                  moduleName = "IMDb"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/IMDb/IMDb/IMDb/IMDb/Interface/List/View/MovieListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "246">
-               </Location>
-               <Location
-                  uuid = "7707C8B9-11B4-4F79-B4B1-B56DEEC37A6E - 6459f8f4844dc5e0"
-                  shouldBeEnabled = "Yes"
-                  ignoreCount = "0"
-                  continueAfterRunningActions = "No"
-                  symbolName = "closure #1 () -&gt; SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: IMDb.Search)&gt;, Swift.String, &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0&gt; in closure #1 () -&gt; SwiftUI.LazyVStack&lt;SwiftUI.ForEach&lt;Swift.Array&lt;(offset: Swift.Int, element: IMDb.Search)&gt;, Swift.String, &lt;&lt;opaque return type of SwiftUI.View.onAppear(perform: Swift.Optional&lt;() -&gt; ()&gt;) -&gt; some&gt;&gt;.0&gt;&gt; in closure #1 () -&gt; &lt;&lt;opaque return type of SwiftUI.View.navigationTitle(SwiftUI.LocalizedStringKey) -&gt; some&gt;&gt;.0 in IMDb.MoViewListView.body.getter : some"
-                  moduleName = "IMDb"
-                  usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/sushant/Desktop/IMDb/IMDb/IMDb/IMDb/Interface/List/View/MovieListView.swift"
-                  startingColumnNumber = "9223372036854775807"
-                  endingColumnNumber = "9223372036854775807"
-                  startingLineNumber = "23"
-                  endingLineNumber = "23"
-                  offsetFromSymbolStart = "789">
-               </Location>
-            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
