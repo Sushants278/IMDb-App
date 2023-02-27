@@ -20,16 +20,12 @@ struct IMDbSeachResult: Codable {
 }
 
 // MARK: - Search
-struct Search: Codable, Identifiable {
+struct Search: Codable, Hashable {
     
     let title, year, imdbID: String
     let type: TypeEnum
     let poster: String
-    
-    var id: String {
-        
-        return imdbID
-    }
+    let id =  UUID()
     
     enum CodingKeys: String, CodingKey {
         case title = "Title"
@@ -43,4 +39,5 @@ struct Search: Codable, Identifiable {
 enum TypeEnum: String, Codable {
     case movie = "movie"
     case series = "series"
+    case game = "game"
 }

@@ -35,7 +35,7 @@ class IMDbSearchViewModel: ObservableObject {
     
     func loadMoreIMDbList( currentItem item: Search) {
        
-        if item.imdbID == self.searchResults?.search.last?.imdbID && self.searchResults?.totalResults.count ?? 0 <= totalsearchResults.count {
+        if item.id == self.searchResults?.search.last?.id && self.searchResults?.totalResults.count ?? 0 <= totalsearchResults.count {
             
             page += 1
             

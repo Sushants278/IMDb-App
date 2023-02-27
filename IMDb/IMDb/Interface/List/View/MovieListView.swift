@@ -11,8 +11,6 @@ struct MoViewListView: View {
     
     @StateObject var viewModel = IMDbSearchViewModel()
     @State private var query: String = ""
-    @Environment(\.isSearching) var isSearching
-    @Environment(\.dismissSearch) private var dismissSearch
 
     var body: some View  {
         
@@ -56,11 +54,3 @@ struct MoViewListView: View {
     }
 }
 
-/*
-struct ContentView_Previews: PreviewProvider {
-    static var previews: some View {
-        MoViewListView()
-    }
-}
-
-*/
