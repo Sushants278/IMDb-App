@@ -29,7 +29,8 @@ extension NetworkManager {
         components.scheme = "https"
         components.host = "www.omdbapi.com"
         components.queryItems = [
-            URLQueryItem(name: "apikey", value: "489182a9")
+            URLQueryItem(name: "apikey", value: "489182a9"),
+            URLQueryItem(name: "s", value: "Batman")
         ]
         
         if loadMore {

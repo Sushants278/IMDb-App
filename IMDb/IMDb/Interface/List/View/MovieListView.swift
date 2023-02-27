@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MoViewListView: View {
+    @StateObject var viewModel = IMDbSearchViewModel()
     
     @State private var query: String = ""
     var body: some View {
@@ -17,7 +18,11 @@ struct MoViewListView: View {
         }
         .searchable(text: $query,
                     placement: .automatic)
-        .navigationBarTitle("IMDb Results")
+        .navigationBarTitle("IMDb Results").onAppear {
+            
+            viewModel.fetchIMDbList(loadMore: false)
+            
+        }
         
     }
 }
