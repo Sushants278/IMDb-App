@@ -30,9 +30,9 @@
             filePath = "IMDb/Infrastructure/NetworkManager + SearchIMDb.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "41"
-            endingLineNumber = "41"
-            landmarkName = "fetchIMDbList(pageNumber:loadMore:handler:)"
+            startingLineNumber = "42"
+            endingLineNumber = "42"
+            landmarkName = "fetchIMDbList(pageNumber:searchQuery:handler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -46,9 +46,9 @@
             filePath = "IMDb/Infrastructure/NetworkManager + SearchIMDb.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "47"
-            endingLineNumber = "47"
-            landmarkName = "fetchIMDbList(pageNumber:loadMore:handler:)"
+            startingLineNumber = "48"
+            endingLineNumber = "48"
+            landmarkName = "fetchIMDbList(pageNumber:searchQuery:handler:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

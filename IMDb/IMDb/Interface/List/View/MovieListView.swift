@@ -8,27 +8,42 @@
 import SwiftUI
 
 struct MoViewListView: View {
-    @StateObject var viewModel = IMDbSearchViewModel()
     
+    @StateObject var viewModel = IMDbSearchViewModel()
     @State private var query: String = ""
-    var body: some View {
+    
+    var body: some View  {
         
         NavigationView {
-           Text("Hello")
-        }
-        .searchable(text: $query,
-                    placement: .automatic)
-        .navigationBarTitle("IMDb Results").onAppear {
             
-            viewModel.fetchIMDbList(loadMore: false)
-            
+            List(viewModel.searchResults1) { item in
+                
+                VStack(alignment: .leading) {
+                    
+                    Text(item.title)
+                        .font(.headline)
+                    Text(item.poster)
+                        .foregroundColor(.secondary)
+                }
+            }
+            .navigationTitle("Search IMDb")
         }
         
+        .searchable( text: $query,
+                    placement: .toolbar
+                )
+        .onChange(of: query) { newQuery in
+            
+            Task { await viewModel.fetchIMDbList(searchQuery: query)
+            }
+        }
     }
 }
+
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
         MoViewListView()
     }
 }
+

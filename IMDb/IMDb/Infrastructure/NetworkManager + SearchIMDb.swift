@@ -12,7 +12,7 @@ typealias IMDbListCompletionClosure = ((IMDbSeachResult?, Error?) -> Void)
 
 protocol IMDbListRequests {
     
-    func fetchIMDbList(pageNumber: Int, loadMore: Bool, handler: @escaping IMDbListCompletionClosure)
+    func fetchIMDbList(pageNumber: Int, searchQuery: String, handler: @escaping IMDbListCompletionClosure)
 }
 
 extension NetworkManager {
@@ -23,20 +23,21 @@ extension NetworkManager {
     ///   - offset: pagination index
     ///   - loadMore: isPagination
     ///   - handler: Callback after execution the request
-    func fetchIMDbList(pageNumber: Int,loadMore: Bool, handler: @escaping IMDbListCompletionClosure) {
+    func fetchIMDbList(pageNumber: Int, searchQuery: String, handler: @escaping IMDbListCompletionClosure) {
         
         var components = URLComponents()
         components.scheme = "https"
         components.host = "www.omdbapi.com"
         components.queryItems = [
             URLQueryItem(name: "apikey", value: "489182a9"),
-            URLQueryItem(name: "s", value: "Batman")
+            URLQueryItem(name: "s", value: searchQuery)
         ]
         
+      /*
         if loadMore {
             
             components.queryItems?.append(URLQueryItem(name: "page", value:  String(pageNumber)))
-        }
+        }*/
         
         guard let url = components.url else {
             
