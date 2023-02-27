@@ -28,7 +28,7 @@ struct Search: Codable, Identifiable {
     
     var id: String {
         
-        self.imdbID
+        return imdbID
     }
     
     enum CodingKeys: String, CodingKey {

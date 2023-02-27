@@ -18,6 +18,7 @@
 		85484DE129ACFC750066932A /* NetworkManager + SearchIMDb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE029ACFC750066932A /* NetworkManager + SearchIMDb.swift */; };
 		85484DE329ACFFC10066932A /* IMDbSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE229ACFFC10066932A /* IMDbSearchResult.swift */; };
 		85484DE529AD028D0066932A /* IMDbSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE429AD028D0066932A /* IMDbSearchViewModel.swift */; };
+		85484DE729AD26100066932A /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE629AD26100066932A /* MovieView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -52,6 +53,7 @@
 		85484DE029ACFC750066932A /* NetworkManager + SearchIMDb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + SearchIMDb.swift"; sourceTree = "<group>"; };
 		85484DE229ACFFC10066932A /* IMDbSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbSearchResult.swift; sourceTree = "<group>"; };
 		85484DE429AD028D0066932A /* IMDbSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbSearchViewModel.swift; sourceTree = "<group>"; };
+		85484DE629AD26100066932A /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -140,6 +142,7 @@
 			isa = PBXGroup;
 			children = (
 				85484DAC29ACF4BF0066932A /* MovieListView.swift */,
+				85484DE629AD26100066932A /* MovieView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -351,6 +354,7 @@
 			files = (
 				85484DE329ACFFC10066932A /* IMDbSearchResult.swift in Sources */,
 				85484DDF29ACFB580066932A /* NetworkManager.swift in Sources */,
+				85484DE729AD26100066932A /* MovieView.swift in Sources */,
 				85484DAD29ACF4BF0066932A /* MovieListView.swift in Sources */,
 				85484DE129ACFC750066932A /* NetworkManager + SearchIMDb.swift in Sources */,
 				85484DE529AD028D0066932A /* IMDbSearchViewModel.swift in Sources */,

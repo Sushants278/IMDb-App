@@ -10,21 +10,47 @@ import Foundation
 class IMDbSearchViewModel: ObservableObject {
     
     @Published var searchResults: IMDbSeachResult?
-    @Published var searchResults1: [Search] = []
+    @Published var totalsearchResults: [Search] = []
+    var page : Int = 1
+    var lastSearchedText: String = ""
     
     /// Load Giphy from API Server
     /// - Parameter loadMore: boolean for pagination call
     func fetchIMDbList(searchQuery: String) async {
     
-            NetworkManager().fetchIMDbList(pageNumber: 1, searchQuery: searchQuery) { [weak self ] (searchResults, error) in
+            NetworkManager().fetchIMDbList(pageNumber: page, searchQuery: searchQuery) { [weak self ] (searchResults, error) in
                 
                 guard let self = self else { return }
                 
                 DispatchQueue.main.async {
                     
+                    self.lastSearchedText = searchQuery
                     self.searchResults = searchResults
-                    self.searchResults1 =  searchResults?.search ?? []
+                    self.totalsearchResults.append(contentsOf: searchResults?.search ?? [])
                 }
             }
+    }
+    
+    //MARK: - PAGINATION
+    
+    func loadMoreIMDbList( currentItem item: Search) {
+       
+        if item.imdbID == self.searchResults?.search.last?.imdbID && self.searchResults?.totalResults.count ?? 0 <= totalsearchResults.count {
+            
+            page += 1
+            
+            Task {
+                
+                await self.fetchIMDbList(searchQuery: self.lastSearchedText)
+            }
+         }
+    }
+    
+    func clearSearchResult() {
+        
+        self.totalsearchResults = []
+        self.searchResults = nil
+        self.lastSearchedText = ""
+        self.page = 1
     }
 }

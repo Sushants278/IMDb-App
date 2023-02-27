@@ -11,51 +11,47 @@ struct MoViewListView: View {
     
     @StateObject var viewModel = IMDbSearchViewModel()
     @State private var query: String = ""
-    
+    @Environment(\.isSearching) var isSearching
+    @Environment(\.dismissSearch) private var dismissSearch
+
     var body: some View  {
         
         NavigationView {
             
-            List(viewModel.searchResults1) { item in
+            ScrollView {
                 
-                HStack(spacing: 10) {
+                LazyVStack {
                     
-                    VStack {
+                    ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
                         
-                        AsyncImage(url: URL(string: item.poster)) { image in
-                            image
-                                .resizable()
-                                .aspectRatio(contentMode: .fit)
-                            
-                        } placeholder: {
-                            
-                            Color.gray
-                            
-                        }
-                        .frame(width: 100, height: 80)
+                        MovieView(search: item)
+                            .padding(10)
+                            .onAppear() {
+                                
+                                viewModel.loadMoreIMDbList(currentItem: item)
+                            }
                     }
-                    
-                    VStack(alignment: .leading) {
-                        
-                        Text(item.title)
-                            .font(.headline)
-                        Text(item.year)
-                            .foregroundColor(.secondary)
-                    }
-                    
-                }.padding(10)
-                
+                }
             }
             .navigationTitle("Search IMDb")
         }
         
         .searchable( text: $query,
-                    placement: .toolbar
-                )
+                     placement: .toolbar,
+                     prompt: "Search IMDb"
+        )
+        .onSubmit(of: .search, runSearch)
         .onChange(of: query) { newQuery in
-            
-            Task { await viewModel.fetchIMDbList(searchQuery: query)
-            }
+
+            viewModel.clearSearchResult()
+            runSearch()
+        }
+    }
+    
+    func runSearch() {
+        
+        Task {
+            await viewModel.fetchIMDbList(searchQuery: query)
         }
     }
 }

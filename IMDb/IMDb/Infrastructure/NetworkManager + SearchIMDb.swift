@@ -30,14 +30,11 @@ extension NetworkManager {
         components.host = "www.omdbapi.com"
         components.queryItems = [
             URLQueryItem(name: "apikey", value: "489182a9"),
-            URLQueryItem(name: "s", value: searchQuery)
+            URLQueryItem(name: "s", value: searchQuery),
+            URLQueryItem(name: "page", value:  String(pageNumber))
         ]
         
-      /*
-        if loadMore {
-            
-            components.queryItems?.append(URLQueryItem(name: "page", value:  String(pageNumber)))
-        }*/
+     
         
         guard let url = components.url else {
             
