@@ -11,40 +11,50 @@ struct IMDbDetailView: View {
     
     var search : Search
     @StateObject var viewModel = IMDbDetailViewModel()
-    
+
     var body: some View {
         
-        ScrollView {
-            
-            VStack(alignment: .leading) {
+        
+            ScrollView {
                 
-                //ImageView
-                IMDbDetailImageView(imdbDetail: viewModel.imdbDetails)
-                
-                //Title
-                Text(viewModel.imdbDetails?.title ?? "")
-                    .font(.bold(.title2)())
-                    .padding(.top, 20)
-                
-                //GenreView
-                IMDbGenreView(imdbDetail: viewModel.imdbDetails)
-                    .padding(.top, 20)
-                
-                //PlotView
-                IMDbPlotView(imdbDetail: viewModel.imdbDetails)
-                
-                Spacer()
-                
-            }.padding(.horizontal, 20)
-            
-                .onAppear() {
+                VStack(alignment: .leading) {
                     
-                    Task {
+                    //ImageView
+                    IMDbDetailImageView(imdbDetail: viewModel.imdbDetails)
+                    
+                    //Title
+                    Text(viewModel.imdbDetails?.title ?? "")
+                        .font(.bold(.title2)())
+                        .padding(.top, 20)
+                    
+                    //GenreView
+                    IMDbGenreView(imdbDetail: viewModel.imdbDetails)
+                        .padding(.top, 20)
+                    
+                    //PlotView
+                    IMDbPlotView(imdbDetail: viewModel.imdbDetails)
+                    
+                    Spacer()
+                    
+                }.padding(.horizontal, 20)
+                    .opacity(viewModel.isLoading ? 0 : 1)
+                    .overlay(content: {
                         
-                        await viewModel.fetchIMDbDetails(for: search.imdbID)
+                        if viewModel.isLoading {
+                            
+                            ProgressView("Loading")
+                                .tint(.orange)
+                                .foregroundColor(.gray)
+                        }
+                    })
+                    .onAppear() {
+                        
+                        Task {
+                            
+                            await viewModel.fetchIMDbDetails(for: search.imdbID)
+                        }
                     }
-                }
-        }
+            }
     }
 }
 

@@ -73,7 +73,7 @@ struct MainView: View {
                         }
                     }
                 }.opacity(viewModel.totalsearchResults.isEmpty ? 0 : 1)
-                 .padding(.top, -100)
+                 .padding(.top, -50)
                 
                 Spacer(minLength: 50)
                 

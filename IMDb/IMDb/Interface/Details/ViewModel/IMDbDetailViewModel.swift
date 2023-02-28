@@ -10,6 +10,7 @@ import Foundation
 class IMDbDetailViewModel: ObservableObject {
     
     @Published var imdbDetails: IMDBDetail?
+    @Published var isLoading = true
     
     /// Load Giphy from API Server
     /// - Parameter loadMore: boolean for pagination call
@@ -22,6 +23,7 @@ class IMDbDetailViewModel: ObservableObject {
             DispatchQueue.main.async {
                 
                 self.imdbDetails = imdbDetails
+                self.isLoading.toggle()
             }
         }
     }

@@ -12,6 +12,7 @@ struct IMDbApp: App {
     var body: some Scene {
         WindowGroup {
             MoViewListView()
+                .environment(\.colorScheme, .dark)
         }
     }
 }
