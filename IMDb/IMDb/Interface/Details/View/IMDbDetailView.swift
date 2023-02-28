@@ -14,7 +14,28 @@ struct IMDbDetailView: View {
     
     var body: some View {
         
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        VStack(alignment: .leading) {
+            
+            //ImageView
+            IMDbDetailImageView(imdbDetail: viewModel.imdbDetails)
+            
+            //Title
+            Text(viewModel.imdbDetails?.title ?? "")
+                .font(.bold(.title2)())
+                .padding(.top, 20)
+            
+            //GenreView
+            GenreView()
+                .padding(.top, 20)
+            
+            //PlotView
+            IMDbPlotView(imdbDetail: viewModel.imdbDetails)
+            
+            Spacer()
+            
+        }.padding(.horizontal, 20)
+        
             .onAppear() {
                 
                 Task {

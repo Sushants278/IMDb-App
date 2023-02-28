@@ -29,12 +29,52 @@ struct IMDbDetailImageView: View {
             } placeholder: {
                 
                 Color.gray
-            }.overlay(ImageOverlay(), alignment: .bottomLeading)
+            }.overlay(ImageOverlay(imdbDetail: imdbDetail), alignment: .bottomLeading)
+                .overlay(alignment: .topTrailing) {
+                    
+                    HStack {
+                        
+                        ZStack {
+                            Text("IMDb")
+                                .font(.system(size: 11, weight: .heavy, design: .default))
+                                .padding(4)
+                                .foregroundColor(.black)
+                        }.background(Color.yellow)
+                            .opacity(0.8)
+                            .padding(.leading, 6)
+                        
+                        Text(imdbDetail?.imdbRating ?? "")
+                            .foregroundColor(.white)
+                            .font(.system(size: 12.0, weight: .heavy))
+                    }.padding(10)
+
+                }
         }
         .background(Color.black)
         .cornerRadius(20)
         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
         .shadow(color: Color.pink.opacity(0.3), radius: 20, x: 0, y: 10)
     
+    }
+}
+
+struct ImageOverlay: View {
+    
+    var imdbDetail: IMDBDetail?
+    
+    var body: some View {
+        
+        ZStack {
+            
+            VStack(alignment: .leading) {
+                
+                Text("Year " + (imdbDetail?.year ?? ""))
+                    .foregroundColor(.white)
+                    .font(.system(size: 11, weight: .heavy, design: .default))
+                    .padding(.leading, 5)
+            }
+        }
+        .cornerRadius(10.0)
+        .padding(15)
     }
 }
