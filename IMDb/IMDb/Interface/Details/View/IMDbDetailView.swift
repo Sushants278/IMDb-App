@@ -10,19 +10,18 @@ import SwiftUI
 struct IMDbDetailView: View {
     
     var search : Search
+    @StateObject var viewModel = IMDbDetailViewModel()
     
     var body: some View {
         
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
             .onAppear() {
                 
+                Task {
+                    
+                    await viewModel.fetchIMDbDetails(for: search.imdbID)
+                }
             }
     }
 }
 
-/*
-struct IMDbDetailView_Previews: PreviewProvider {
-    static var previews: some View {
-        IMDbDetailView()
-    }
-}*/

@@ -57,7 +57,7 @@ struct MainView: View {
                     
                     ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
                         
-                        NavigationLink (destination: IMDbDetailView()) {
+                        NavigationLink (destination: IMDbDetailView(search: item)) {
                             
                         MovieView(search: item)
                             .padding(10)

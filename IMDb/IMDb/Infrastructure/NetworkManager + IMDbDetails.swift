@@ -7,14 +7,17 @@
 
 import Foundation
 
+typealias IMDbDetailCompletionClosure = ((IMDBDetail?, Error?) -> Void)
+
+
 protocol IMDbDetailsRequests {
     
-    func fetchIMDbDetails(for movieID: String, handler: @escaping IMDbListCompletionClosure)
+    func fetchIMDbDetails(for movieID: String, handler: @escaping IMDbDetailCompletionClosure)
 }
 
 extension NetworkManager: IMDbDetailsRequests {
     
-    func fetchIMDbDetails(for movieID: String, handler: @escaping IMDbListCompletionClosure) {
+    func fetchIMDbDetails(for movieID: String, handler: @escaping IMDbDetailCompletionClosure) {
         
         var urlComponents = self.urlComponents
         urlComponents.queryItems?.append(URLQueryItem(name: "i", value: movieID))
