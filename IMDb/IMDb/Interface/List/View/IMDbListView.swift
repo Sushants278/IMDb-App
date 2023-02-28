@@ -22,7 +22,7 @@ struct IMDbListView: View {
             MainView(viewModel: viewModel)
                 .navigationTitle(Identifiers.searchTitle)
                
-        }
+        }.navigationViewStyle(StackNavigationViewStyle())
         .searchable( text: $query,
                      placement: .navigationBarDrawer(displayMode: .automatic),
                      prompt: Identifiers.searchTitle

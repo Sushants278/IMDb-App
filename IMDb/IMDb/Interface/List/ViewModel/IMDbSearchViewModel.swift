@@ -41,7 +41,10 @@ class IMDbSearchViewModel: ObservableObject {
     /// - Parameter item: last searched Item
     func loadMoreIMDbList( currentItem item: Search) {
        
-        if item.id == self.searchResults?.search.last?.id && self.searchResults?.totalResults.count ?? 0 <= totalsearchResults.count {
+        let isTotalResultsCountReached = self.searchResults?.totalResults.count ?? 0 <= totalsearchResults.count
+        
+        if item.id == self.searchResults?.search.last?.id &&  isTotalResultsCountReached {
+            
             page += 1
             Task {
                 
