@@ -9,9 +9,14 @@ import SwiftUI
 
 struct IMDbDetailView: View {
     
+    var search : Search
+    
     var body: some View {
         
         Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+            .onAppear() {
+                
+            }
     }
 }
 

@@ -10,7 +10,7 @@ import SwiftUI
 struct MovieView: View {
     
     //MARK: - PROPERTIES
-        var search : Search
+     var search : Search
     
     var body: some View {
        
