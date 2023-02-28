@@ -47,9 +47,11 @@ struct IMDbListView: View {
 
 struct MainView: View {
     
+    //MARK: - PROPERTIES
     @StateObject var viewModel: IMDbSearchViewModel
     @Environment(\.isSearching) var isSearching
     
+    //MARK: - View Life Cycle
     var body: some View {
         
         NavigationView {
