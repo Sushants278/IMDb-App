@@ -15,24 +15,26 @@ struct IMDbDetailImageView: View {
         
         VStack {
             
-            AsyncImage(url: URL(string: "https://www.indiewire.com/wp-content/uploads/2021/01/joker-movie.jpg")) { image in
+            AsyncImage(url: URL(string: imdbDetail?.poster ?? "")) { image in
                 
                 image
                     .resizable()
-                    .aspectRatio(contentMode: .fill)
+                    .scaledToFill()
+                    .aspectRatio(contentMode: .fit)
+                    .frame(
+                        width: UIScreen.main.bounds.width - 30,
+                        height: 250
+                    )
                 
             } placeholder: {
                 
                 Color.gray
             }.overlay(ImageOverlay(), alignment: .bottomLeading)
         }
-        .background(Color.pink)
+        .background(Color.black)
         .cornerRadius(20)
         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 2)
         .shadow(color: Color.pink.opacity(0.3), radius: 20, x: 0, y: 10)
-        .frame(
-            width: UIScreen.main.bounds.width - 30,
-            height: 250
-        )
+    
     }
 }
