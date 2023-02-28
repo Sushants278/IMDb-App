@@ -49,24 +49,30 @@ struct MainView: View {
     
     var body: some View {
         
-        ScrollView {
+        NavigationView {
             
-            LazyVStack {
+            ScrollView {
                 
-                ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
+                LazyVStack {
                     
-                    MovieView(search: item)
-                        .padding(10)
-                        .onAppear() {
-                            viewModel.loadMoreIMDbList(currentItem: item)
+                    ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
+                        
+                        NavigationLink (destination: IMDbDetailView()) {
+                            
+                        MovieView(search: item)
+                            .padding(10)
+                            .onAppear() {
+                                viewModel.loadMoreIMDbList(currentItem: item)
+                            }
                         }
-                }
-            }.opacity(viewModel.totalsearchResults.isEmpty ? 0 : 1)
-            
-            Spacer(minLength: 50)
-            
-            NoSearchResult()
-                .opacity(viewModel.totalsearchResults.isEmpty && isSearching ? 1 : 0)
+                    }
+                }.opacity(viewModel.totalsearchResults.isEmpty ? 0 : 1)
+                
+                Spacer(minLength: 50)
+                
+                NoSearchResult()
+                    .opacity(viewModel.totalsearchResults.isEmpty && isSearching ? 1 : 0)
+            }
         }
     }
 }

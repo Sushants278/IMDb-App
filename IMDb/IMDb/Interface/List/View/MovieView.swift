@@ -34,6 +34,7 @@ struct MovieView: View {
                 
                 Text(search.title)
                     .font(.headline)
+                    .foregroundColor(.white)
                 Text(search.year)
                     .foregroundColor(.secondary)
             }
