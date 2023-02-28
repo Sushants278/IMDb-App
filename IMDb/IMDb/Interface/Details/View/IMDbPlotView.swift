@@ -9,9 +9,11 @@ import SwiftUI
 
 struct IMDbPlotView: View {
     
+    //MARK: - PROPERTIES
     @State var isExpanded = false
     var imdbDetail: IMDBDetail?
     
+    //MARK: - View Life Cycle
     var body: some View {
         
         Text(Identifiers.plot)

@@ -9,8 +9,10 @@ import SwiftUI
 
 struct IMDbDetailImageView: View {
     
+    //MARK: - PROPERTIES
     var imdbDetail: IMDBDetail?
     
+    //MARK: - View Life Cycle
     var body: some View {
         
         VStack {

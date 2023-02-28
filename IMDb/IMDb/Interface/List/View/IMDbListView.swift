@@ -9,10 +9,12 @@ import SwiftUI
 
 struct IMDbListView: View {
     
+    //MARK: - PROPERTIES
     @StateObject var viewModel = IMDbSearchViewModel()
     @State private var query: String = ""
     
     
+    //MARK: - View Life Cycle
     var body: some View  {
         
         NavigationView {
@@ -61,25 +63,25 @@ struct MainView: View {
                 
                 LazyVStack {
                     
-                    ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
+                    ForEach(viewModel.totalsearchResults, id: \.self) { item in
                         
                         NavigationLink (destination: IMDbDetailView(search: item)) {
                             
-                        IMDbView(search: item)
-                            .padding(10)
-                            .onAppear() {
-                                viewModel.loadMoreIMDbList(currentItem: item)
-                            }
+                            IMDbView(search: item)
+                                .padding(10)
+                                .onAppear() {
+                                    viewModel.loadMoreIMDbList(currentItem: item)
+                                }
                         }
                     }
                 }.opacity(viewModel.totalsearchResults.isEmpty ? 0 : 1)
-                 .padding(.top, -50)
+                    .padding(.top, -50)
                 
                 Spacer(minLength: 50)
                 
                 IMDbNoSearchResult()
                     .opacity(viewModel.totalsearchResults.isEmpty && isSearching ? 1 : 0)
-                }
+            }
         }
     }
 }

@@ -9,13 +9,14 @@ import Foundation
 
 class IMDbSearchViewModel: ObservableObject {
     
+    //MARK: - Properties
     @Published var searchResults: IMDbSeachResult?
     @Published var totalsearchResults: [Search] = []
     var page : Int = 1
     var lastSearchedText: String = ""
     
-    /// Load Giphy from API Server
-    /// - Parameter loadMore: boolean for pagination call
+    /// Load IMDb List from API Server
+    /// - Parameter searchQuery: searchQuery to search the IMDb
     func fetchIMDbList(searchQuery: String) async {
         
         guard searchQuery.count > 2 else {
@@ -36,14 +37,12 @@ class IMDbSearchViewModel: ObservableObject {
         }
     }
     
-    //MARK: - PAGINATION
-    
+    /// This is pagination call to load the more Item
+    /// - Parameter item: last searched Item
     func loadMoreIMDbList( currentItem item: Search) {
        
         if item.id == self.searchResults?.search.last?.id && self.searchResults?.totalResults.count ?? 0 <= totalsearchResults.count {
-            
             page += 1
-            
             Task {
                 
                 await self.fetchIMDbList(searchQuery: self.lastSearchedText)
@@ -51,6 +50,7 @@ class IMDbSearchViewModel: ObservableObject {
          }
     }
     
+    /// Clear all the static stored states once user cancel or clear the search
     func clearSearchResult() {
         
         self.totalsearchResults = []

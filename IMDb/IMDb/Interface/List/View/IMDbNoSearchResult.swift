@@ -9,7 +9,9 @@ import SwiftUI
 
 struct IMDbNoSearchResult: View {
 
+    //MARK: - View Life Cycle
     var body: some View {
+        
         ZStack (alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
           
             VStack (alignment: .leading, spacing: 30) {

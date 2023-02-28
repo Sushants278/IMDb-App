@@ -9,9 +9,11 @@ import SwiftUI
 
 struct IMDbDetailView: View {
     
+    //MARK: - PROPERTIES
     var search : Search
     @StateObject var viewModel = IMDbDetailViewModel()
 
+    //MARK: - View Life Cycle
     var body: some View {
         
             ScrollView {

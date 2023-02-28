@@ -122,9 +122,9 @@
 		85484DA929ACF4BF0066932A /* IMDb */ = {
 			isa = PBXGroup;
 			children = (
-				85484DD829ACF6260066932A /* Infrastructure */,
-				85484DD729ACF61D0066932A /* Interface */,
 				85484DAA29ACF4BF0066932A /* IMDbApp.swift */,
+				85484DD729ACF61D0066932A /* Interface */,
+				85484DD829ACF6260066932A /* Infrastructure */,
 				85484DAE29ACF4C10066932A /* Assets.xcassets */,
 				85484DB029ACF4C10066932A /* Preview Content */,
 			);

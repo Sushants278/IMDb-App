@@ -12,6 +12,7 @@ struct IMDbView: View {
     //MARK: - PROPERTIES
      var search : Search
     
+    //MARK: - View Life Cycle
     var body: some View {
        
         HStack(spacing: 10) {

@@ -9,11 +9,12 @@ import Foundation
 
 class IMDbDetailViewModel: ObservableObject {
     
+    //MARK: - PROPERTIES
     @Published var imdbDetails: IMDBDetail?
     @Published var isLoading = true
     
-    /// Load Giphy from API Server
-    /// - Parameter loadMore: boolean for pagination call
+    /// get IMDB detials from API Server for selected ID
+    /// - Parameter moviewID: imdbID or moviewID to get the details
     func fetchIMDbDetails(for moviewID: String) async {
         
         NetworkManager().fetchIMDbDetails(for: moviewID) { [weak self ] imdbDetails, error in

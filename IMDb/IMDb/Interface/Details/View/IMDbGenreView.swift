@@ -9,9 +9,10 @@ import SwiftUI
 
 struct IMDbGenreView: View {
     
-    
+    //MARK: - PROPERTIES
     var imdbDetail: IMDBDetail?
     
+    //MARK: - View Life Cycle
     var body: some View {
         // 1
         ScrollView(.horizontal) {
