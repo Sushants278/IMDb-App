@@ -11,7 +11,7 @@ import SwiftUI
 struct IMDbApp: App {
     var body: some Scene {
         WindowGroup {
-            MoViewListView()
+            IMDbListView()
                 .environment(\.colorScheme, .dark)
         }
     }

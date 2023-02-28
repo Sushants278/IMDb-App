@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct NoSearchResult: View {
+struct IMDbNoSearchResult: View {
 
     var body: some View {
         ZStack (alignment: Alignment(horizontal: .leading, vertical: .bottom)) {

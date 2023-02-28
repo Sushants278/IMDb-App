@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct MoViewListView: View {
+struct IMDbListView: View {
     
     @StateObject var viewModel = IMDbSearchViewModel()
     @State private var query: String = ""
@@ -65,7 +65,7 @@ struct MainView: View {
                         
                         NavigationLink (destination: IMDbDetailView(search: item)) {
                             
-                        MovieView(search: item)
+                        IMDbView(search: item)
                             .padding(10)
                             .onAppear() {
                                 viewModel.loadMoreIMDbList(currentItem: item)
@@ -77,7 +77,7 @@ struct MainView: View {
                 
                 Spacer(minLength: 50)
                 
-                NoSearchResult()
+                IMDbNoSearchResult()
                     .opacity(viewModel.totalsearchResults.isEmpty && isSearching ? 1 : 0)
                 
                
