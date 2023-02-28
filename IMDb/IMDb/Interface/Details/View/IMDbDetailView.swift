@@ -14,35 +14,37 @@ struct IMDbDetailView: View {
     
     var body: some View {
         
-        
-        VStack(alignment: .leading) {
+        ScrollView {
             
-            //ImageView
-            IMDbDetailImageView(imdbDetail: viewModel.imdbDetails)
-            
-            //Title
-            Text(viewModel.imdbDetails?.title ?? "")
-                .font(.bold(.title2)())
-                .padding(.top, 20)
-            
-            //GenreView
-            GenreView()
-                .padding(.top, 20)
-            
-            //PlotView
-            IMDbPlotView(imdbDetail: viewModel.imdbDetails)
-            
-            Spacer()
-            
-        }.padding(.horizontal, 20)
-        
-            .onAppear() {
+            VStack(alignment: .leading) {
                 
-                Task {
+                //ImageView
+                IMDbDetailImageView(imdbDetail: viewModel.imdbDetails)
+                
+                //Title
+                Text(viewModel.imdbDetails?.title ?? "")
+                    .font(.bold(.title2)())
+                    .padding(.top, 20)
+                
+                //GenreView
+                GenreView()
+                    .padding(.top, 20)
+                
+                //PlotView
+                IMDbPlotView(imdbDetail: viewModel.imdbDetails)
+                
+                Spacer()
+                
+            }.padding(.horizontal, 20)
+            
+                .onAppear() {
                     
-                    await viewModel.fetchIMDbDetails(for: search.imdbID)
+                    Task {
+                        
+                        await viewModel.fetchIMDbDetails(for: search.imdbID)
+                    }
                 }
-            }
+        }
     }
 }
 
