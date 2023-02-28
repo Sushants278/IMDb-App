@@ -14,7 +14,7 @@ struct IMDbPlotView: View {
     
     var body: some View {
         
-        Text("Plot")
+        Text(Identifiers.plot)
             .font(.system(size: 15, weight: .heavy, design: .default))
             .padding(.top, 20)
         
@@ -34,13 +34,13 @@ struct IMDbPlotView: View {
             }
             
         } label: {
-            Text( "Read More")
+            Text(Identifiers.readMore)
                 .frame(width: 100, height: 40)
                 .padding(.leading ,-20)
                 .font(.system(size: 15, weight: .heavy, design: .default))
             
         }.frame(width: 100, height: 40)
-            .opacity(isExpanded ? 0 : 1)
+         .opacity(isExpanded ? 0 : 1)
     }
 }
 

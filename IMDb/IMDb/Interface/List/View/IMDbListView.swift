@@ -18,12 +18,12 @@ struct IMDbListView: View {
         NavigationView {
             
             MainView(viewModel: viewModel)
-                .navigationTitle("Search IMDb")
+                .navigationTitle(Identifiers.searchTitle)
                
         }
         .searchable( text: $query,
                      placement: .navigationBarDrawer(displayMode: .automatic),
-                     prompt: "Search IMDb"
+                     prompt: Identifiers.searchTitle
         )
         .onSubmit(of: .search, runSearch)
         .onChange(of: query) { newQuery in
@@ -54,7 +54,7 @@ struct MainView: View {
             
             ScrollView {
                 
-                Image("imdb")
+                Image(Identifiers.imdbImageName)
                     .resizable()
                     .aspectRatio(contentMode: .fit)
                     .frame( height: !isSearching ? 100 : 0, alignment: .init(horizontal: .center, vertical: .center))
@@ -79,8 +79,6 @@ struct MainView: View {
                 
                 IMDbNoSearchResult()
                     .opacity(viewModel.totalsearchResults.isEmpty && isSearching ? 1 : 0)
-                
-               
                 }
         }
     }

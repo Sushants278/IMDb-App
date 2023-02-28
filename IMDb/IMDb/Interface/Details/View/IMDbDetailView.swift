@@ -14,7 +14,6 @@ struct IMDbDetailView: View {
 
     var body: some View {
         
-        
             ScrollView {
                 
                 VStack(alignment: .leading) {
@@ -42,7 +41,7 @@ struct IMDbDetailView: View {
                         
                         if viewModel.isLoading {
                             
-                            ProgressView("Loading")
+                            ProgressView(Identifiers.progress)
                                 .tint(.orange)
                                 .foregroundColor(.gray)
                         }

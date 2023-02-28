@@ -13,12 +13,12 @@ struct IMDbNoSearchResult: View {
         ZStack (alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
           
             VStack (alignment: .leading, spacing: 30) {
-                Text("No Results")
+                Text(Identifiers.noResults)
                     .foregroundColor(.white)
                     .font(.largeTitle)
                     .foregroundColor(.white)
                 
-                Text("Sorry, there are no results for \nthis search, Please try another phrase...")
+                Text(Identifiers.noResultMessage)
                     .fontWeight(.semibold)
                     .foregroundColor(.white)
                     .opacity(0.7)

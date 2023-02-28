@@ -35,7 +35,7 @@ struct IMDbDetailImageView: View {
                     HStack {
                         
                         ZStack {
-                            Text("IMDb")
+                            Text(Identifiers.imdbRating)
                                 .font(.system(size: 11, weight: .heavy, design: .default))
                                 .padding(4)
                                 .foregroundColor(.black)
@@ -68,7 +68,7 @@ struct ImageOverlay: View {
             
             VStack(alignment: .leading) {
                 
-                Text("Year " + (imdbDetail?.year ?? ""))
+                Text(Identifiers.year + (imdbDetail?.year ?? ""))
                     .foregroundColor(.white)
                     .font(.system(size: 11, weight: .heavy, design: .default))
                     .padding(.leading, 5)

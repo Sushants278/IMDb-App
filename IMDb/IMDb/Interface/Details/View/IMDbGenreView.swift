@@ -27,7 +27,6 @@ struct IMDbGenreView: View {
     }
     
     func getGenreView(genre: String) -> some View {
-    
         
         return ZStack {
             
