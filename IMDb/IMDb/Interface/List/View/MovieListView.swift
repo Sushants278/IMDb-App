@@ -11,23 +11,22 @@ struct MoViewListView: View {
     
     @StateObject var viewModel = IMDbSearchViewModel()
     @State private var query: String = ""
-   
+    
     
     var body: some View  {
         
         NavigationView {
             
             MainView(viewModel: viewModel)
-            .navigationTitle("Search IMDb")
+                .navigationTitle("Search IMDb")
         }
-        
         .searchable( text: $query,
-                     placement: .toolbar,
+                     placement: .navigationBarDrawer(displayMode: .always),
                      prompt: "Search IMDb"
         )
         .onSubmit(of: .search, runSearch)
         .onChange(of: query) { newQuery in
-
+            
             viewModel.clearSearchResult()
             runSearch()
         }
@@ -36,6 +35,7 @@ struct MoViewListView: View {
     func runSearch() {
         
         Task {
+          
             await viewModel.fetchIMDbList(searchQuery: query)
         }
     }
@@ -55,7 +55,6 @@ struct MainView: View {
                 
                 ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
                     
-                    
                     MovieView(search: item)
                         .padding(10)
                         .onAppear() {
@@ -72,25 +71,3 @@ struct MainView: View {
     }
 }
 
-struct NoSearchResult: View {
-
-    var body: some View {
-        ZStack (alignment: Alignment(horizontal: .leading, vertical: .bottom)) {
-          
-            VStack (alignment: .leading, spacing: 30) {
-                Text("No Results")
-                    .foregroundColor(.white)
-                    .font(.largeTitle)
-                    .foregroundColor(.white)
-                
-                Text("Sorry, there are no results for \nthis search, Please try another phrase...")
-                    .fontWeight(.semibold)
-                    .foregroundColor(.white)
-                    .opacity(0.7)
-                    
-            }
-            .padding(.horizontal, 70)
-            .padding(.bottom, UIScreen.main.bounds.height * 0.1)
-        }
-    }
-}

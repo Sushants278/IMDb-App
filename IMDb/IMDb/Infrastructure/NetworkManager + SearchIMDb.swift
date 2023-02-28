@@ -15,7 +15,7 @@ protocol IMDbListRequests {
     func fetchIMDbList(pageNumber: Int, searchQuery: String, handler: @escaping IMDbListCompletionClosure)
 }
 
-extension NetworkManager {
+extension NetworkManager: IMDbListRequests {
     
     
     /// Gets the array of IMDb associated with Ednpoint
@@ -25,17 +25,11 @@ extension NetworkManager {
     ///   - handler: Callback after execution the request
     func fetchIMDbList(pageNumber: Int, searchQuery: String, handler: @escaping IMDbListCompletionClosure) {
         
-        var components = URLComponents()
-        components.scheme = "https"
-        components.host = "www.omdbapi.com"
-        components.queryItems = [
-            URLQueryItem(name: "apikey", value: "489182a9"),
-            URLQueryItem(name: "s", value: searchQuery),
-            URLQueryItem(name: "page", value:  String(pageNumber))
-        ]
+        var urlComponents = self.urlComponents
+        urlComponents.queryItems?.append(URLQueryItem(name: "s", value: searchQuery))
+        urlComponents.queryItems?.append(URLQueryItem(name: "page", value:  String(pageNumber)))
         
-        
-        guard let url = components.url else {
+        guard let url = urlComponents.url else {
             
             handler(nil, NetworkError.invalidUrl)
             return

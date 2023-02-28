@@ -15,6 +15,17 @@ enum NetworkError: Error {
 
 class NetworkManager {
     
+    var urlComponents: URLComponents {
+        
+        var urlComponents = URLComponents()
+        urlComponents.scheme = "https"
+        urlComponents.host = "www.omdbapi.com"
+        urlComponents.queryItems = [
+            URLQueryItem(name: "apikey", value: "489182a9")
+        ]
+        return urlComponents
+    }
+    
     func executeRequest<T: Codable>(request: URLRequest, completion: ((T?, Error?) -> Void)?) {
         
         let session = URLSession(configuration: .default)

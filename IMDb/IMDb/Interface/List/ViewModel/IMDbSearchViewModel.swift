@@ -17,18 +17,23 @@ class IMDbSearchViewModel: ObservableObject {
     /// Load Giphy from API Server
     /// - Parameter loadMore: boolean for pagination call
     func fetchIMDbList(searchQuery: String) async {
-    
-            NetworkManager().fetchIMDbList(pageNumber: page, searchQuery: searchQuery) { [weak self ] (searchResults, error) in
+        
+        guard searchQuery.count > 2 else {
+            
+            return
+        }
+        
+        NetworkManager().fetchIMDbList(pageNumber: page, searchQuery: searchQuery) { [weak self ] (searchResults, error) in
+            
+            guard let self = self else { return }
+            
+            DispatchQueue.main.async {
                 
-                guard let self = self else { return }
-                
-                DispatchQueue.main.async {
-                    
-                    self.lastSearchedText = searchQuery
-                    self.searchResults = searchResults
-                    self.totalsearchResults.append(contentsOf: searchResults?.search ?? [])
-                }
+                self.lastSearchedText = searchQuery
+                self.searchResults = searchResults
+                self.totalsearchResults.append(contentsOf: searchResults?.search ?? [])
             }
+        }
     }
     
     //MARK: - PAGINATION
