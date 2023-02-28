@@ -22,7 +22,6 @@ class IMDbDetailViewModel: ObservableObject {
             DispatchQueue.main.async {
                 
                 self.imdbDetails = imdbDetails
-                print(imdbDetails)
             }
         }
     }

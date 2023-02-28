@@ -58,39 +58,3 @@ struct Rating: Codable {
         case value = "Value"
     }
 }
-
-
-import SwiftUI
-
-
-struct GenreView: View {
-    
-    let nums = [1, 2, 3,4,5]
-    
-    var body: some View {
-        // 1
-        ScrollView(.horizontal) {
-            
-            HStack {
-                // 2
-                ForEach(0...5, id: \.self) { index in
-                    
-                    getGenreView()
-                }
-            }
-        }
-    }
-    
-    func getGenreView() -> some View {
-        
-        return ZStack {
-            Text("IMDb")
-                .font(.system(size: 10, weight: .heavy, design: .default))
-                .padding(4)
-                .foregroundColor(.white)
-        }.background(Color.gray)
-            .opacity(0.8)
-            .padding(.leading, 6)
-        
-    }
-}

@@ -19,9 +19,10 @@ struct MoViewListView: View {
             
             MainView(viewModel: viewModel)
                 .navigationTitle("Search IMDb")
+               
         }
         .searchable( text: $query,
-                     placement: .navigationBarDrawer(displayMode: .always),
+                     placement: .navigationBarDrawer(displayMode: .automatic),
                      prompt: "Search IMDb"
         )
         .onSubmit(of: .search, runSearch)
@@ -53,6 +54,11 @@ struct MainView: View {
             
             ScrollView {
                 
+                Image("imdb")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
+                    .frame( height: !isSearching ? 100 : 0, alignment: .init(horizontal: .center, vertical: .center))
+                
                 LazyVStack {
                     
                     ForEach(Array(viewModel.totalsearchResults.enumerated()), id: \.1.id) { (index, item) in
@@ -67,12 +73,15 @@ struct MainView: View {
                         }
                     }
                 }.opacity(viewModel.totalsearchResults.isEmpty ? 0 : 1)
+                 .padding(.top, -100)
                 
                 Spacer(minLength: 50)
                 
                 NoSearchResult()
                     .opacity(viewModel.totalsearchResults.isEmpty && isSearching ? 1 : 0)
-            }
+                
+               
+                }
         }
     }
 }

@@ -19,6 +19,14 @@
 		85484DE329ACFFC10066932A /* IMDbSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE229ACFFC10066932A /* IMDbSearchResult.swift */; };
 		85484DE529AD028D0066932A /* IMDbSearchViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE429AD028D0066932A /* IMDbSearchViewModel.swift */; };
 		85484DE729AD26100066932A /* MovieView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE629AD26100066932A /* MovieView.swift */; };
+		85484DE929AD58C10066932A /* NoSearchResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DE829AD58C00066932A /* NoSearchResult.swift */; };
+		85484DEB29AD627A0066932A /* NetworkManager + IMDbDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DEA29AD627A0066932A /* NetworkManager + IMDbDetails.swift */; };
+		85484DED29AE3D040066932A /* IMDbDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DEC29AE3D040066932A /* IMDbDetailView.swift */; };
+		85484DEF29AE41000066932A /* IMDbDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DEE29AE41000066932A /* IMDbDetailViewModel.swift */; };
+		85484DF129AE41CC0066932A /* IMDbDetail.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DF029AE41CC0066932A /* IMDbDetail.swift */; };
+		85484DF329AE49230066932A /* IMDbDetailImageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DF229AE49230066932A /* IMDbDetailImageView.swift */; };
+		85484DF529AE49820066932A /* IMDbPlotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DF429AE49820066932A /* IMDbPlotView.swift */; };
+		85484DF729AE5FC80066932A /* IMDbGenreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 85484DF629AE5FC80066932A /* IMDbGenreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +62,14 @@
 		85484DE229ACFFC10066932A /* IMDbSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbSearchResult.swift; sourceTree = "<group>"; };
 		85484DE429AD028D0066932A /* IMDbSearchViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbSearchViewModel.swift; sourceTree = "<group>"; };
 		85484DE629AD26100066932A /* MovieView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieView.swift; sourceTree = "<group>"; };
+		85484DE829AD58C00066932A /* NoSearchResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoSearchResult.swift; sourceTree = "<group>"; };
+		85484DEA29AD627A0066932A /* NetworkManager + IMDbDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NetworkManager + IMDbDetails.swift"; sourceTree = "<group>"; };
+		85484DEC29AE3D040066932A /* IMDbDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbDetailView.swift; sourceTree = "<group>"; };
+		85484DEE29AE41000066932A /* IMDbDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbDetailViewModel.swift; sourceTree = "<group>"; };
+		85484DF029AE41CC0066932A /* IMDbDetail.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbDetail.swift; sourceTree = "<group>"; };
+		85484DF229AE49230066932A /* IMDbDetailImageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbDetailImageView.swift; sourceTree = "<group>"; };
+		85484DF429AE49820066932A /* IMDbPlotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbPlotView.swift; sourceTree = "<group>"; };
+		85484DF629AE5FC80066932A /* IMDbGenreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IMDbGenreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +159,7 @@
 			children = (
 				85484DAC29ACF4BF0066932A /* MovieListView.swift */,
 				85484DE629AD26100066932A /* MovieView.swift */,
+				85484DE829AD58C00066932A /* NoSearchResult.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -177,6 +194,7 @@
 			children = (
 				85484DDE29ACFB580066932A /* NetworkManager.swift */,
 				85484DE029ACFC750066932A /* NetworkManager + SearchIMDb.swift */,
+				85484DEA29AD627A0066932A /* NetworkManager + IMDbDetails.swift */,
 			);
 			path = Infrastructure;
 			sourceTree = "<group>";
@@ -204,6 +222,7 @@
 		85484DDB29ACF6500066932A /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
+				85484DEE29AE41000066932A /* IMDbDetailViewModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -211,6 +230,10 @@
 		85484DDC29ACF65D0066932A /* View */ = {
 			isa = PBXGroup;
 			children = (
+				85484DEC29AE3D040066932A /* IMDbDetailView.swift */,
+				85484DF229AE49230066932A /* IMDbDetailImageView.swift */,
+				85484DF429AE49820066932A /* IMDbPlotView.swift */,
+				85484DF629AE5FC80066932A /* IMDbGenreView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -218,6 +241,7 @@
 		85484DDD29ACF6650066932A /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				85484DF029AE41CC0066932A /* IMDbDetail.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -352,13 +376,21 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				85484DF129AE41CC0066932A /* IMDbDetail.swift in Sources */,
+				85484DF729AE5FC80066932A /* IMDbGenreView.swift in Sources */,
+				85484DF529AE49820066932A /* IMDbPlotView.swift in Sources */,
+				85484DF329AE49230066932A /* IMDbDetailImageView.swift in Sources */,
 				85484DE329ACFFC10066932A /* IMDbSearchResult.swift in Sources */,
+				85484DE929AD58C10066932A /* NoSearchResult.swift in Sources */,
 				85484DDF29ACFB580066932A /* NetworkManager.swift in Sources */,
+				85484DEB29AD627A0066932A /* NetworkManager + IMDbDetails.swift in Sources */,
 				85484DE729AD26100066932A /* MovieView.swift in Sources */,
+				85484DEF29AE41000066932A /* IMDbDetailViewModel.swift in Sources */,
 				85484DAD29ACF4BF0066932A /* MovieListView.swift in Sources */,
 				85484DE129ACFC750066932A /* NetworkManager + SearchIMDb.swift in Sources */,
 				85484DE529AD028D0066932A /* IMDbSearchViewModel.swift in Sources */,
 				85484DAB29ACF4BF0066932A /* IMDbApp.swift in Sources */,
+				85484DED29AE3D040066932A /* IMDbDetailView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

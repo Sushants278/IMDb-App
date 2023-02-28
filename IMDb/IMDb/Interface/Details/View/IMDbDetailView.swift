@@ -27,7 +27,7 @@ struct IMDbDetailView: View {
                     .padding(.top, 20)
                 
                 //GenreView
-                GenreView()
+                IMDbGenreView(imdbDetail: viewModel.imdbDetails)
                     .padding(.top, 20)
                 
                 //PlotView
